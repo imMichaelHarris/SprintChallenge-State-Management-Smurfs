@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { myAxios } from "../myAxios";
 
 const SmurfForm = () => {
   const [formState, setFormState] = useState({
@@ -8,11 +9,13 @@ const SmurfForm = () => {
   });
 
   const handleChange = input => {
-      setFormState({
-          ...formState,
-          [input.target.name]: input.target.value
-      })
+    setFormState({
+      ...formState,
+      [input.target.name]: input.target.value
+    });
   };
+
+  const addSmurf = () => {};
   return (
     <form>
       <fieldset>
