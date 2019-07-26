@@ -47,11 +47,10 @@ const SmurfForm = () => {
     myAxios
       .put(`/smurfs/${state.editSmurf[0].id}`, formState)
       .then(res => {
-        console.log(res);
         dispatch({ type: "EDIT_SUCCESS", payload: res.data });
+        dispatch({ type: "EDIT_OFF" });
       })
       .catch(err => {
-        console.log(err.response);
         dispatch({ type: "EDIT_ERROR", payload: err.response.data });
       });
   };
