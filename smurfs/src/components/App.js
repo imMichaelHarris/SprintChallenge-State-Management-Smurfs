@@ -4,6 +4,7 @@ import {initialSmurfState, smurfReducer} from '../reducers/smurfReducer'
 import "./App.css";
 
 const App = () => {
+  const [smurfs, dispatch] = useReducer(smurfReducer, initialSmurfState)
 
   useEffect(() => {
 
