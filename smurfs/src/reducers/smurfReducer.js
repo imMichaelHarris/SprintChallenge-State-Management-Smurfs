@@ -61,6 +61,13 @@ export const smurfReducer = (state, { type, payload }) => {
         editMode: false,
         editSmurf: {}
       };
+      case "EDIT_SUCCESS":
+          return {
+              ...state,
+              editMode: false,
+              editSmurf: {},
+              smurfs: payload
+          }
     default:
       return state;
   }
