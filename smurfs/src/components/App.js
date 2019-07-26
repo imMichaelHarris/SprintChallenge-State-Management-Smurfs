@@ -4,6 +4,7 @@ import {initialSmurfState, smurfReducer} from '../reducers/smurfReducer'
 import {myAxios} from '../myAxios';
 import SmurfList from "../views/SmurfList";
 import "./App.css";
+import SmurfForm from "./SmurfForm";
 
 const App = () => {
   const [state, dispatch] = useReducer(smurfReducer, initialSmurfState);
@@ -26,6 +27,7 @@ const App = () => {
       <h1>SMURFS! 2.0 W/ Redux</h1>
 
       <SmurfProvider value={state.smurfs}>
+        <SmurfForm />
         <SmurfList />
       </SmurfProvider>
     </div>
