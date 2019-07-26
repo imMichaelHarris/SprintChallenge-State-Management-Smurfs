@@ -8,4 +8,6 @@
     The main difference between application level state and component level state is that component state is tied to a specific component. Meaning that the component state should only effect that individual componenet like form component state. Now application level state is for multiple components. If there is information that needs to be shared across multiple components you would want application state like redux or context api.
 
 1. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+    "Redux-thunk" is a react-redux package that is used to help manage our asynchronous functions in redux. We might call a function that will cause side-effects in out application and with redux-thunk we can prevent those side effects by creating a finite state pattern. In our action creators we can use a finite state pattern to describe what should happen in out application in every step of a asynchronous action.
+
 1. What is your favorite state management system you've learned and this sprint? Please explain why!
