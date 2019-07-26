@@ -12,7 +12,7 @@ const SmurfForm = () => {
   const { dispatch, state } = useContext(SmurfContext);
 
   useEffect(() => {
-    state.editMode && setFormState(state.editSmurf[0]) 
+    state.editMode && setFormState(state.editSmurf[0]);
   }, [state.editMode]);
 
   const handleChange = input => {
@@ -40,6 +40,17 @@ const SmurfForm = () => {
       age: "",
       height: ""
     });
+  };
+
+  const updateSmurf = e => {
+    myAxios
+      .put(`/smurfs/${state.editSmurf.id}`)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err.response);
+      });
   };
   return (
     <form onSubmit={addSmurf}>
