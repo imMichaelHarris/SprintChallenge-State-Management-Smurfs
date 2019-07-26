@@ -53,21 +53,13 @@ export const smurfReducer = (state, { type, payload }) => {
         editMode: true,
         editSmurf: state.smurfs.filter(smurf => smurf.id === payload)
       };
-    case "EDIT_OFF":
+    case "EDIT_SUCCESS":
       return {
         ...state,
-        loading: false,
-        error: "",
         editMode: false,
-        editSmurf: {}
+        editSmurf: {},
+        smurfs: payload
       };
-      case "EDIT_SUCCESS":
-          return {
-              ...state,
-              editMode: false,
-              editSmurf: {},
-              smurfs: payload
-          }
     default:
       return state;
   }
