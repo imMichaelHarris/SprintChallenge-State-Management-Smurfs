@@ -2,7 +2,8 @@ export const initialSmurfState = {
   smurfs: [],
   loading: false,
   message: "",
-  error: ""
+  error: "",
+  editMode: false
 };
 export const smurfReducer = (state, { type, payload }) => {
   switch (type) {
@@ -42,6 +43,13 @@ export const smurfReducer = (state, { type, payload }) => {
         ...state,
         loading: false,
         error: payload
+      };
+    case "EDIT_ON":
+      return {
+        ...state,
+        loading: false,
+        error: "",
+        editMode: true
       };
     default:
       return state;
