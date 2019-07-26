@@ -30,6 +30,13 @@ export const smurfReducer = (state, { type, payload }) => {
         ...state,
         loading: true
       };
+      case "ADD_SUCCESS":
+          return {
+              ...state,
+              loading: false,
+              smurfs: payload,
+              message: "Your smurf was added"
+          }
     default:
       return state;
   }
