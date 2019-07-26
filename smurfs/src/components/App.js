@@ -13,7 +13,7 @@ const App = () => {
     <div className="App">
       <h1>SMURFS! 2.0 W/ Redux</h1>
 
-      <SmurfProvider value={}>
+      <SmurfProvider value={smurfs}>
 
       </SmurfProvider>
     </div>
