@@ -48,9 +48,11 @@ const SmurfForm = () => {
       .put(`/smurfs/${state.editSmurf[0].id}`, formState)
       .then(res => {
         console.log(res);
+        dispatch({ type: "EDIT_SUCCESS", payload: res.data });
       })
       .catch(err => {
         console.log(err.response);
+        dispatch({ type: "EDIT_ERROR", payload: err.response.data });
       });
   };
   return (
