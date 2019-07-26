@@ -44,7 +44,7 @@ const SmurfForm = () => {
 
   const updateSmurf = e => {
     myAxios
-      .put(`/smurfs/${state.editSmurf.id}`)
+      .put(`/smurfs/${state.editSmurf.id}`, formState)
       .then(res => {
         console.log(res);
       })
@@ -53,7 +53,7 @@ const SmurfForm = () => {
       });
   };
   return (
-    <form onSubmit={addSmurf}>
+    <form onSubmit={state.editMode ? updateSmurf : addSmurf}>
       <fieldset>
         <legend>Add your smurf</legend>
         <label htmlFor="">Name</label>
