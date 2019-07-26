@@ -5,7 +5,16 @@ import {myAxios} from '../myAxios';
 import "./App.css";
 
 const App = () => {
-  const [state, dispatch] = useReducer(smurfReducer, initialSmurfState)
+  const [state, dispatch] = useReducer(smurfReducer, initialSmurfState);
+
+  const getSmurfs = () => {
+    dispatch({type: "FETCH_START"})
+    myAxios.get('/smurfs').then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err.response)
+    })
+  }
 
   useEffect(() => {
 
