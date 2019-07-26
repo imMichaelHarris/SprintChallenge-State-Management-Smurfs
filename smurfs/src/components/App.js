@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
+import { SmurfProvider } from "../contexts/SmurfContext";
 import "./App.css";
+
 const App = () => {
   return (
     <div className="App">
