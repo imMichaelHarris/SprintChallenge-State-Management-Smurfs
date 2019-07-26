@@ -12,9 +12,11 @@ const Smurf = ({ smurf }) => {
     myAxios
       .delete(`/smurfs/${smurf.id}`)
       .then(res => {
+        dispatch({ type: "DELETE_SUCCESS", payload: res.data });
         console.log(res);
       })
       .catch(err => {
+        dispatch({ type: "DELETE_ERROR", payload: err.response.data });
         console.log(err.response);
       });
   };
