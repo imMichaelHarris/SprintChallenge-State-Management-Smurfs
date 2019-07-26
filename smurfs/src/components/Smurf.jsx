@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { SmurfContext } from "../contexts/SmurfContext";
 
 const Smurf = ({ smurf }) => {
-  const { disptach } = useContext(SmurfContext);
+  const { dispatch } = useContext(SmurfContext);
 
   const edit = () => {
-      disptach({type: "EDIT_ON", payload: smurf.id})
+      dispatch({type: "EDIT_ON", payload: smurf.id})
   }
   return (
     <div>

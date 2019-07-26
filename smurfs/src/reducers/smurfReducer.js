@@ -3,7 +3,8 @@ export const initialSmurfState = {
   loading: false,
   message: "",
   error: "",
-  editMode: false
+  editMode: false,
+  editSmurf: {}
 };
 export const smurfReducer = (state, { type, payload }) => {
   switch (type) {
@@ -49,7 +50,8 @@ export const smurfReducer = (state, { type, payload }) => {
         ...state,
         loading: false,
         error: "",
-        editMode: true
+        editMode: true,
+        editSmurf: state.smurfs.filter(smurf => smurf.id === payload)
       };
     default:
       return state;

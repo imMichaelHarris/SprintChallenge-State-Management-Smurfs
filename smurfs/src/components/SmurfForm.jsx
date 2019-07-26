@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { SmurfContext } from "../contexts/SmurfContext";
 import { myAxios } from "../myAxios";
 
@@ -9,7 +9,12 @@ const SmurfForm = () => {
     height: ""
   });
 
-  const { dispatch } = useContext(SmurfContext);
+  const { dispatch, state } = useContext(SmurfContext);
+
+  useEffect(() => {
+      console.log(state)
+    state.editMode && setFormState(state.editSmurf[0]) 
+  }, [state.editMode]);
 
   const handleChange = input => {
     setFormState({
