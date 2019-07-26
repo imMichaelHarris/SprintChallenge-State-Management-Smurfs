@@ -18,11 +18,27 @@ const SmurfForm = () => {
     });
   };
 
-  const addSmurf = () => {
-      dispatch({type: "ADD_START"})
+  const addSmurf = e => {
+    e.preventDefault();
+    dispatch({ type: "ADD_START" });
+    myAxios
+      .post("/smurfs", formState)
+      .then(res => {
+        dispatch({ type: "ADD_SUCCESS", payload: res.data });
+        console.log(res);
+      })
+      .catch(err => {
+        dispatch({ type: "ADD_ERROR", payload: err.response.data });
+        console.log(err.response);
+      });
+    setFormState({
+      name: "",
+      age: "",
+      height: ""
+    });
   };
   return (
-    <form>
+    <form onSubmit={addSmurf}>
       <fieldset>
         <legend>Add your smurf</legend>
         <label htmlFor="">Name</label>
@@ -52,6 +68,7 @@ const SmurfForm = () => {
           value={formState.height}
           onChange={handleChange}
         />
+        <button>Submit</button>
       </fieldset>
     </form>
   );
