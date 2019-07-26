@@ -12,7 +12,8 @@ const SmurfForm = () => {
   const { dispatch, state } = useContext(SmurfContext);
 
   useEffect(() => {
-    state.editMode && setFormState(state.editSmurf[0]);
+    console.log(state.editSmurf)
+    state.editMode && setFormState(state.editSmurf);
   }, [state.editMode]);
 
   const handleChange = input => {
@@ -44,9 +45,11 @@ const SmurfForm = () => {
 
   const updateSmurf = e => {
     e.preventDefault();
+    console.log(state.editSmurf)
     myAxios
-      .put(`/smurfs/${state.editSmurf[0].id}`, formState)
+      .put(`/smurfs/${state.editSmurf.id}`, formState)
       .then(res => {
+        console.log(res)
         dispatch({ type: "EDIT_SUCCESS", payload: res.data });
       })
       .catch(err => {

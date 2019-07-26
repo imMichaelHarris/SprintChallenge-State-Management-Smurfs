@@ -51,7 +51,7 @@ export const smurfReducer = (state, { type, payload }) => {
         loading: false,
         error: "",
         editMode: true,
-        editSmurf: state.smurfs.filter(smurf => smurf.id === payload)
+        editSmurf: {...state.smurfs.filter(smurf => smurf.id === payload)[0]}
       };
     case "EDIT_SUCCESS":
       return {
