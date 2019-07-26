@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useReducer } from "react";
 import { SmurfProvider } from "../contexts/SmurfContext";
+import {initialSmurfState, smurfReducer} from '../reducers/smurfReducer'
 import "./App.css";
 
 const App = () => {
