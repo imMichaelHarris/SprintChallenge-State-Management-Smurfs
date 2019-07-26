@@ -1,6 +1,7 @@
 export const initialSmurfState = {
   smurfs: [],
   loading: false,
+  message: "",
   error: ""
 };
 export const smurfReducer = (state, { type, payload }) => {
@@ -9,6 +10,7 @@ export const smurfReducer = (state, { type, payload }) => {
       return {
         ...state,
         loading: true,
+        message: "",
         error: ""
       };
     case "FETCH_SUCCESS":
@@ -22,6 +24,11 @@ export const smurfReducer = (state, { type, payload }) => {
         ...state,
         loading: false,
         error: payload
+      };
+    case "ADD_START":
+      return {
+        ...state,
+        loading: true
       };
     default:
       return state;

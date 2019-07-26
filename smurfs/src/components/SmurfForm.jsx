@@ -18,7 +18,9 @@ const SmurfForm = () => {
     });
   };
 
-  const addSmurf = () => {};
+  const addSmurf = () => {
+      dispatch({type: "ADD_START"})
+  };
   return (
     <form>
       <fieldset>
