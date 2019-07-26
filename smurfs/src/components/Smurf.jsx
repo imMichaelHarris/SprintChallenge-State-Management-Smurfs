@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import {myAxios} from '../myAxios';
 import { SmurfContext } from "../contexts/SmurfContext";
 
 const Smurf = ({ smurf }) => {
@@ -6,6 +7,9 @@ const Smurf = ({ smurf }) => {
 
   const edit = () => {
       dispatch({type: "EDIT_ON", payload: smurf.id})
+  }
+  const deleteSmurf = () => {
+      dispatch({type: "DELETE_START"})
   }
   return (
     <div>
@@ -15,6 +19,7 @@ const Smurf = ({ smurf }) => {
         <h4>Height: {smurf.height}cm</h4>
       </aside>
       <button onClick={edit}>Edit</button>
+      <button>Delete</button>
     </div>
   );
 };
