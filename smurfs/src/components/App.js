@@ -10,7 +10,7 @@ const App = () => {
   const getSmurfs = () => {
     dispatch({ type: "FETCH_START" });
     myAxios
-      .get("/smufs")
+      .get("/smurfs")
       .then(res => {
         dispatch({ type: "FETCH_SUCCESS", payload: res.data });
         console.log(res);

@@ -17,6 +17,12 @@ export const smurfReducer = (state, { type, payload }) => {
         smurfs: payload,
         loading: false
       };
+    case "FETCH_ERROR":
+      return {
+        ...state,
+        loading: false,
+        error: payload
+      };
     default:
       return state;
   }
