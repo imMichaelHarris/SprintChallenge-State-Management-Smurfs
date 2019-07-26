@@ -43,6 +43,7 @@ const SmurfForm = () => {
   };
 
   const updateSmurf = e => {
+    e.preventDefault();
     myAxios
       .put(`/smurfs/${state.editSmurf.id}`, formState)
       .then(res => {
