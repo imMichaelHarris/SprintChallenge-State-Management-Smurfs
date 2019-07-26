@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { SmurfContext } from "../contexts/SmurfContext";
 import { myAxios } from "../myAxios";
 
 const SmurfForm = () => {
@@ -7,6 +8,8 @@ const SmurfForm = () => {
     age: "",
     height: ""
   });
+
+  const { dispatch } = useContext(SmurfContext);
 
   const handleChange = input => {
     setFormState({
