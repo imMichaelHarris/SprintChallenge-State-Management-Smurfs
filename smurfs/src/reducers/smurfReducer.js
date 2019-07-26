@@ -60,6 +60,16 @@ export const smurfReducer = (state, { type, payload }) => {
         editSmurf: {},
         smurfs: payload
       };
+    case "DELETE_SUCCESS":
+      return {
+        ...state,
+        smurfs: payload
+      };
+    case "DELETE_ERROR":
+      return {
+        ...state,
+        error: payload
+      };
     default:
       return state;
   }
