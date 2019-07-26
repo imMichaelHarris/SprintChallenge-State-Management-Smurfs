@@ -12,7 +12,6 @@ const SmurfForm = () => {
   const { dispatch, state } = useContext(SmurfContext);
 
   useEffect(() => {
-      console.log(state)
     state.editMode && setFormState(state.editSmurf[0]) 
   }, [state.editMode]);
 
@@ -73,7 +72,7 @@ const SmurfForm = () => {
           value={formState.height}
           onChange={handleChange}
         />
-        <button>Submit</button>
+        <button>{state.editMode ? "Update smurf" : "Add Smurf"}</button>
       </fieldset>
     </form>
   );
