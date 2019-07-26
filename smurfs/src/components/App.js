@@ -4,7 +4,7 @@ import {initialSmurfState, smurfReducer} from '../reducers/smurfReducer'
 import "./App.css";
 
 const App = () => {
-  const [smurfs, dispatch] = useReducer(smurfReducer, initialSmurfState)
+  const [state, dispatch] = useReducer(smurfReducer, initialSmurfState)
 
   useEffect(() => {
 
@@ -13,7 +13,7 @@ const App = () => {
     <div className="App">
       <h1>SMURFS! 2.0 W/ Redux</h1>
 
-      <SmurfProvider value={smurfs}>
+      <SmurfProvider value={state.smurfs}>
 
       </SmurfProvider>
     </div>
