@@ -1,28 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App {
+  min-height: 100vh;
   text-align: center;
+  background: #a1ffce; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #faffd1,
+    #a1ffce
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #faffd1,
+    #a1ffce
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+fieldset {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
 }
-
-.App-header {
-  background-color: #222;
+input {
+  max-width: 300px;
+  margin: 6px auto;
+  padding: 5px;
+  transition: .3s all ease-in-out
+}
+input:focus {
+  padding: 5px 10px;
+}
+form button {
+  margin: 0 auto;
+  padding: 5px 10px;
+  background: #faffd1;
+  border: 1px solid lightgray;
+}
+button:hover {
+  cursor: pointer;
+}
+.smurf-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.smurf {
   height: 150px;
-  padding: 20px;
-  color: white;
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid blueviolet;
+  border-top: none;
+  border-bottom: none;
+  margin: 10px;
 }
-
-.App-title {
-  font-size: 1.5em;
+.smurf button {
+  padding: 4px;
+  background: #a1ffce;
+  border: none;
+  border-radius: 10px;
+  border: 1px solid blueviolet;
+  transition: .2s all ease-in-out;
 }
-
-.App-intro {
-  font-size: large;
+.smurf button:hover{
+  padding: 4px 6px;
 }
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.smurf main{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.smurf main footer{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 90px;
 }

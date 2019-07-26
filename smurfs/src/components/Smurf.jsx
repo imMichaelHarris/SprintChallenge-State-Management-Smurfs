@@ -13,22 +13,24 @@ const Smurf = ({ smurf }) => {
       .delete(`/smurfs/${smurf.id}`)
       .then(res => {
         dispatch({ type: "DELETE_SUCCESS", payload: res.data });
-        console.log(res);
       })
       .catch(err => {
         dispatch({ type: "DELETE_ERROR", payload: err.response.data });
-        console.log(err.response);
       });
   };
   return (
-    <div>
+    <div className="smurf">
       <h2>{smurf.name}</h2>
-      <aside>
-        <h4>Age: {smurf.age}</h4>
-        <h4>Height: {smurf.height}cm</h4>
-      </aside>
-      <button onClick={edit}>Edit</button>
-      <button onDoubleClick={deleteSmurf}>Delete</button>
+      <main>
+        <aside>
+          <h4>Age: {smurf.age}</h4>
+          <h4>Height: {smurf.height}cm</h4>
+        </aside>
+        <footer>
+          <button onClick={edit}>Edit</button>
+          <button onDoubleClick={deleteSmurf}>Delete</button>
+        </footer>
+      </main>
     </div>
   );
 };

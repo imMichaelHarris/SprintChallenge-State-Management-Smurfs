@@ -56,8 +56,8 @@ const SmurfForm = () => {
   return (
     <form onSubmit={state.editMode ? updateSmurf : addSmurf}>
       <fieldset>
-        <legend>Add your smurf</legend>
-        <label htmlFor="">Name</label>
+          <div>
+
         <input
           type="text"
           placeholder="Name"
@@ -66,7 +66,6 @@ const SmurfForm = () => {
           value={formState.name}
           onChange={handleChange}
         />
-        <label htmlFor="">Age</label>
         <input
           type="number"
           placeholder="Age"
@@ -75,7 +74,6 @@ const SmurfForm = () => {
           value={formState.age}
           onChange={handleChange}
         />
-        <label htmlFor="">Height</label>
         <input
           type="number"
           placeholder="Height"
@@ -84,6 +82,8 @@ const SmurfForm = () => {
           value={formState.height}
           onChange={handleChange}
         />
+          </div>
+        <legend>Add your smurf</legend>
         <button>{state.editMode ? "Update smurf" : "Add Smurf"}</button>
       </fieldset>
     </form>
