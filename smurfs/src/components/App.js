@@ -1,6 +1,7 @@
 import React, { useEffect, useReducer } from "react";
 import { SmurfProvider } from "../contexts/SmurfContext";
 import {initialSmurfState, smurfReducer} from '../reducers/smurfReducer'
+import {myAxios} from '../myAxios';
 import "./App.css";
 
 const App = () => {
