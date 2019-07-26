@@ -12,9 +12,7 @@ const App = () => {
     dispatch({type: "FETCH_START"})
     myAxios.get('/smurfs').then(res => {
       dispatch({type: "FETCH_SUCCESS", payload: res.data})
-      console.log(res)
     }).catch(err => {
-      console.log(err.response)
       dispatch({type: "FETCH_ERROR", payload: err.response.data})
     })
   }
@@ -22,6 +20,7 @@ const App = () => {
   useEffect(() => {
     getSmurfs()
   }, [])
+  console.log(state)
   return (
     <div className="App">
       <h1>SMURFS! 2.0 W/ Redux</h1>
